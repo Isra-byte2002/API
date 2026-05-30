@@ -1,15 +1,13 @@
 const mongoose = require('mongoose');
 
-// 1. Esquema de MongoDB/Mongoose
 const UsuarioSchema = new mongoose.Schema({
-    nombre: { type: String, required: true },
-    ap_paterno: { type: String, required: true },
-    correo: { type: String, unique: true, required: true }
+  nombre: { type: String, required: true },
+  ap_paterno: { type: String, required: true },
+  correo: { type: String, unique: true, required: true }
 });
 
 const Usuario = mongoose.model('Usuario', UsuarioSchema);
 
-// 2. Componente de Swagger Reutilizable (Sección YAML)
 /**
  * @swagger
  * components:
@@ -23,17 +21,17 @@ const Usuario = mongoose.model('Usuario', UsuarioSchema);
  * properties:
  * id:
  * type: string
- * description: ID autogenerado por MongoDB
+ * description: ID generado por MongoDB
  * example: 60c72b2f9b1d8b2bad7fff10
  * nombre:
  * type: string
- * example: Gerardo
+ * example: Juan
  * ap_paterno:
  * type: string
- * example: Pineda
+ * example: Perez
  * correo:
  * type: string
- * example: gerardo@correo.com
+ * example: juan.perez@correo.com
  */
 
 module.exports = { Usuario };
